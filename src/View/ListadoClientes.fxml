@@ -11,6 +11,6 @@
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="330.0" layoutY="73.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="330.0" layoutY="73.0" mnemonicParsing="false" text="Cerrar" />
    </children>
 </AnchorPane>
