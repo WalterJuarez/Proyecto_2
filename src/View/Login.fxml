@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+   <children>
+      <Label layoutX="87.0" layoutY="70.0" text="Usuario" />
+      <Label layoutX="87.0" layoutY="139.0" text="Password" />
+      <PasswordField fx:id="pwfPassword" layoutX="158.0" layoutY="135.0" text="1234" />
+      <TextField fx:id="txtUsuario" layoutX="158.0" layoutY="66.0" text="chis" />
+      <Button fx:id="btIngresar" layoutX="184.0" layoutY="225.0" mnemonicParsing="false" onAction="#ValidarUsuario" prefHeight="26.0" prefWidth="96.0" text="Ingresar" />
+   </children>
+</Pane>
