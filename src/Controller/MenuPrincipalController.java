@@ -2,6 +2,7 @@ package Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -44,5 +45,16 @@ public class MenuPrincipalController {
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    public void IngresoRespuesto(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/IngresoRepuesto.fxml"));
+        Pane root = (Pane) fxmlLoader.load();
+        //Estructura FX
+        Scene scene = new Scene(root, 564, 291);
+        Stage stage = new Stage();
+        stage.setTitle("Listado Clientes");
+        stage.setScene(scene);
+        stage.show();
     }
 }

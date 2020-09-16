@@ -12,7 +12,7 @@
       <TextField fx:id="txtNombreUsuario" layoutX="169.0" layoutY="111.0" />
       <Label layoutX="66.0" layoutY="164.0" text="Direccion" />
       <TextField fx:id="txtDireccionUsuario" layoutX="169.0" layoutY="160.0" />
-      <CheckBox layoutX="273.0" layoutY="210.0" mnemonicParsing="false" text="Empresa" />
+      <CheckBox fx:id="chbTipoUsuario" layoutX="273.0" layoutY="210.0" mnemonicParsing="false" text="Empresa" />
       <Label layoutX="44.0" layoutY="235.0" text="Si presionas el boton empresa el usuario ingresado " />
       <Label layoutX="44.0" layoutY="260.0" text="se registrara de esa manera, de lo contrario se registrara como Particular" />
    </children>
