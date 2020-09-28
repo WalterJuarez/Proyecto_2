@@ -58,6 +58,8 @@ public class Clientes {
         this.tipoUsuario = tipoUsuario;
     }
 
+
+
     @Override
     public String toString() {
         return "Clientes{" +
