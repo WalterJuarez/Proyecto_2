@@ -1,17 +1,18 @@
 package Model;
 
 public class Clientes {
-    int id;
+    private static int sigldCliente = 1;
+    private int id;
     private String nombre;
     private String nit;
     private String direccion;
     private String tipoUsuario;
 
-    public Clientes() {
+    public Clientes(int id) {
+        this.id = sigldCliente++;
     }
 
-    public Clientes(int id, String nombre, String nit, String direccion, String tipoUsuario) {
-        this.id = id;
+    public Clientes(String nombre, String nit, String direccion, String tipoUsuario) {
         this.nombre = nombre;
         this.nit = nit;
         this.direccion = direccion;
@@ -57,7 +58,6 @@ public class Clientes {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
-
 
 
     @Override
