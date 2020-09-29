@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Objects;
+
 public class Clientes {
     private static int sigldCliente = 1;
     private int id;
@@ -59,6 +61,22 @@ public class Clientes {
         this.tipoUsuario = tipoUsuario;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Clientes clientes = (Clientes) o;
+        return id == clientes.id &&
+                nombre.equals( clientes.nombre ) &&
+                nit.equals( clientes.nit ) &&
+                direccion.equals( clientes.direccion ) &&
+                tipoUsuario.equals( clientes.tipoUsuario );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( id, nombre, nit, direccion, tipoUsuario );
+    }
 
     @Override
     public String toString() {

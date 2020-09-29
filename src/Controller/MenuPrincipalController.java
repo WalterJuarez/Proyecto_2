@@ -14,21 +14,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MenuPrincipalController {
+public class MenuPrincipalController  {
     public MenuItem opIngresoCliente;
     private ComboBox comboBox;
     ObservableList<String> items = FXCollections.observableArrayList("empresa","Individual");
     @FXML
-    public void initialize(){
 
-
-    }
 
     public void IngresoCliente() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/IngresoCliente.fxml"));
         Pane root = (Pane) fxmlLoader.load();
         //Estructura FX
-        Scene scene = new Scene(root, 564, 291);
+        Scene scene = new Scene(root, 564, 600);
         Stage stage = new Stage();
         stage.setTitle("Ingreso Clientes");
         stage.setScene(scene);

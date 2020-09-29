@@ -1,7 +1,7 @@
 package Model;
 
 public class Producto {
-<<<<<<< HEAD
+
     private static int siglProducto = 2000;
     private int id;
     private String nombreProducto;
@@ -39,6 +39,5 @@ public class Producto {
                 ", nombreProducto='" + nombreProducto + '\'' +
                 ", precio= Q." + precio;
     }
-=======
->>>>>>> 0fc492c829b2dd3b1ddf4fcf651253e2e45a5107
+
 }
