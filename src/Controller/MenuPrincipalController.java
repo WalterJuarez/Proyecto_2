@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.DataSistema;
+import Model.Individual;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,8 +15,9 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class MenuPrincipalController  {
+public class MenuPrincipalController extends DataSistema {
     public MenuItem opIngresoCliente;
 
     @FXML
@@ -24,32 +27,20 @@ public class MenuPrincipalController  {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/IngresoCliente.fxml"));
         Pane root = (Pane) fxmlLoader.load();
         //Estructura FX
-        Scene scene = new Scene(root, 564, 600);
+        Scene scene = new Scene(root, 585, 575);
         Stage stage = new Stage();
         stage.setTitle("Ingreso Clientes");
         stage.setScene(scene);
         stage.showAndWait();
     }
 
-    public void ListadoClientes()throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/ListadoClientes.fxml"));
-        Pane root = (Pane) fxmlLoader.load();
-        //Estructura FX
-        Scene scene = new Scene(root, 564, 291);
-        Stage stage = new Stage();
-        stage.setTitle("Listado Clientes");
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
     public void IngresoRespuesto(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/IngresoRepuesto.fxml"));
         Pane root = (Pane) fxmlLoader.load();
         //Estructura FX
-        Scene scene = new Scene(root, 564, 291);
+        Scene scene = new Scene(root, 585, 575);
         Stage stage = new Stage();
-        stage.setTitle("Listado Clientes");
+        stage.setTitle("Listado de Repuestos");
         stage.setScene(scene);
         stage.show();
     }

@@ -25,7 +25,7 @@ public class Controller {
                 Pane root = (Pane) fxmlLoader.load();
 
                 //Estructura FX
-                Scene scene = new Scene(root, 800, 700);
+                Scene scene = new Scene(root, 900, 800);
                 Stage stage = new Stage();
                 stage.setTitle("Sistema de Ventas");
                 stage.setScene(scene);

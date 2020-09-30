@@ -11,7 +11,6 @@
             <items>
               <MenuItem fx:id="opIngresoCliente" mnemonicParsing="false" onAction="#IngresoCliente" text="Ingresar Cliente" />
                   <MenuItem mnemonicParsing="false" onAction="#IngresoRespuesto" text="Ingresar Repuesto" />
-                  <MenuItem mnemonicParsing="false" text="Lista de Repuestos" />
                   <MenuItem mnemonicParsing="false" text="Salir" />
             </items>
           </Menu>

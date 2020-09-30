@@ -6,14 +6,34 @@ public class Producto {
     private int id;
     private String nombreProducto;
     private double precio;
+    private int existencia;
 
     public Producto(int id) {
-        this.id = siglProducto++;
+
     }
 
-    public Producto(String nombreProducto, double precio) {
+    public Producto(String nombreProducto, double precio, int existencia) {
+        this.id = siglProducto++;
         this.nombreProducto = nombreProducto;
         this.precio = precio;
+        this.existencia = existencia;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getExistencia() {
+        return existencia;
+    }
+
+    public void setExistencia(int existencia) {
+        this.existencia = existencia;
     }
 
     public String getNombreProducto() {

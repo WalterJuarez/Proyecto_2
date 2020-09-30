@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="438.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoClienteController">
+<Pane prefHeight="481.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoClienteController">
    <children>
-      <Button fx:id="btCrear" layoutX="448.0" layoutY="72.0" mnemonicParsing="false" onAction="#IngresoClientes" prefHeight="26.0" prefWidth="82.0" text="Crear" />
+      <Button fx:id="btCrear" layoutX="364.0" layoutY="32.0" mnemonicParsing="false" onAction="#IngresoClientes" prefHeight="26.0" prefWidth="149.0" text="CREAR Y ACTUALIZAR" />
       <Label layoutX="68.0" layoutY="77.0" text="Nit" />
       <TextField fx:id="txtNitUsuario" layoutX="169.0" layoutY="65.0" />
       <Label layoutX="68.0" layoutY="107.0" text="Nombre" />
@@ -22,5 +22,7 @@
       </TableView>
       <Label layoutX="62.0" layoutY="36.0" text="Dpi" />
       <TextField fx:id="txtDpi" layoutX="169.0" layoutY="32.0" />
+      <Label layoutX="62.0" layoutY="416.0" text="* RECUERDE LLENAR TODOS LOS CAMPOS, DE LO CONTRARIO " textFill="#f20a0a" />
+      <Label layoutX="70.0" layoutY="433.0" text="NO SERAN AGREGADOS A LA LISTA" textFill="#ee0404" />
    </children>
 </Pane>

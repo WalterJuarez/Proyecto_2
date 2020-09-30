@@ -14,7 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class IngresoClienteController{
+public class IngresoClienteController extends DataSistema{
 
     public TextField txtNitUsuario;
     public TextField txtNombreUsuario;
@@ -30,19 +30,28 @@ public class IngresoClienteController{
 
     ArrayList<Individual> listadoClientes = new ArrayList<>();
 
+
     public void IngresoClientes(ActionEvent actionEvent) {
         String tipoUsuario = "Particular";
+        listadoClientes.add(new Individual("2666475020101","walter","38910632","Ciudad","individual"));
+        listadoClientes.add(new Individual("6546146131222","Daniel","987532","Ciudad","individual"));
+        listadoClientes.add(new Individual("63546542313","sheily","524288885","Ciudad","individual"));
+
         /*if(chbTipoUsuario.getOnAction().equals(true)){
             tipoUsuario = "Empresa";
         }*/
 
 
         if (txtNitUsuario.getText().equals("") || txtNombreUsuario.getText().equals("") || txtDireccionUsuario.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
+            //JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
         } else {
 
             listadoClientes.add(new Individual(txtDpi.getText(),txtNombreUsuario.getText(), txtNitUsuario.getText(), txtDireccionUsuario.getText(), tipoUsuario));
-            JOptionPane.showMessageDialog(null, "Ingreso Exitoso");
+            //JOptionPane.showMessageDialog(null, "Ingreso Exitoso");
+            txtNitUsuario.setText( "" );
+            txtNombreUsuario.setText( "" );
+            txtDpi.setText( "" );
+            txtDireccionUsuario.setText( "" );
         }
 
         ObservableList<Individual> cliente = FXCollections.observableArrayList(listadoClientes);
