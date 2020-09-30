@@ -4,17 +4,18 @@ import java.util.Objects;
 
 public class Clientes {
     private static int sigldCliente = 1;
-    private int id;
+    private int id ;
     private String nombre;
     private String nit;
     private String direccion;
     private String tipoUsuario;
 
     public Clientes(int id) {
-        this.id = sigldCliente++;
+
     }
 
     public Clientes(String nombre, String nit, String direccion, String tipoUsuario) {
+        this.id = sigldCliente++;
         this.nombre = nombre;
         this.nit = nit;
         this.direccion = direccion;

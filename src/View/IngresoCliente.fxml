@@ -17,6 +17,7 @@
           <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="colNit" prefWidth="75.0" text="NIT" />
             <TableColumn fx:id="colNombre" prefWidth="75.0" text="NOMBRE" />
+            <TableColumn fx:id="colDire" prefWidth="75.0" text="DIRECCION" />
         </columns>
       </TableView>
       <Label layoutX="62.0" layoutY="36.0" text="Dpi" />

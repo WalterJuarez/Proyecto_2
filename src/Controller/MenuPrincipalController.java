@@ -16,8 +16,7 @@ import java.io.IOException;
 
 public class MenuPrincipalController  {
     public MenuItem opIngresoCliente;
-    private ComboBox comboBox;
-    ObservableList<String> items = FXCollections.observableArrayList("empresa","Individual");
+
     @FXML
 
 
@@ -29,7 +28,7 @@ public class MenuPrincipalController  {
         Stage stage = new Stage();
         stage.setTitle("Ingreso Clientes");
         stage.setScene(scene);
-        stage.show();
+        stage.showAndWait();
     }
 
     public void ListadoClientes()throws IOException{
