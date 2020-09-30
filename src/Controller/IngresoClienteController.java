@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Clientes;
+import Model.DataSistema;
 import Model.Individual;
 import javafx.beans.DefaultProperty;
 import javafx.collections.FXCollections;
@@ -13,17 +14,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class IngresoClienteController {
+public class IngresoClienteController extends DataSistema {
 
     public TextField txtNitUsuario;
     public TextField txtNombreUsuario;
     public TextField txtDireccionUsuario;
     @FXML
-    public TableView<Individual> tblClientes;
-    public TableColumn colId;
-    public TableColumn colNit;
-    public TableColumn colNombre;
-    private ObservableList<Individual> cliente;
+    public TableView<Clientes> tblClientes;
+    public TableColumn<Clientes, Integer> colId;
+    public TableColumn<Clientes, String> colNit;
+    public TableColumn<Clientes, String> colNombre;
+    public TextField txtDpi;
+    ;
 
     ArrayList<Clientes> listadoClientes = new ArrayList<>();
 
@@ -35,22 +37,17 @@ public class IngresoClienteController {
         if (txtNitUsuario.getText().equals("") || txtNombreUsuario.getText().equals("") || txtDireccionUsuario.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
         } else {
-            listadoClientes.add(new Clientes(txtNombreUsuario.getText(), txtNitUsuario.getText(), txtDireccionUsuario.getText(), tipoUsuario));
+            Datos();
+            listadoClientes.add(new Individual(txtDpi.getText(),txtNombreUsuario.getText(), txtNitUsuario.getText(), txtDireccionUsuario.getText(), tipoUsuario));
             JOptionPane.showMessageDialog(null, "Ingreso Exitoso");
         }
 
-
-
-    }
-
-
-
-    public void lista (){
-        cliente = FXCollections.observableArrayList();
-        this.colId.setCellFactory( new PropertyValueFactory("id"  ) );
-        this.colNit.setCellFactory( new PropertyValueFactory("nit"  ) );
-        this.colNombre.setCellFactory( new PropertyValueFactory("nombre"  ) );
-        this.tblClientes.setItems( cliente );
+        ObservableList<Clientes> cliente = FXCollections.observableArrayList(listadoClientes);
+        colId.setCellValueFactory( new PropertyValueFactory<Clientes, Integer>("id") );
+        colNit.setCellValueFactory( new PropertyValueFactory<Clientes, String>("nit") );
+        colNombre.setCellValueFactory( new PropertyValueFactory<Clientes, String>("nombre") );
+        tblClientes.setItems(cliente);
+        System.out.println(listadoClientes.get(0));
     }
 
   
