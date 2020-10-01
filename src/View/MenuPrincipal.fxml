@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuPrincipalController">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuPrincipalController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
         <menus>
@@ -14,15 +14,9 @@
                   <MenuItem mnemonicParsing="false" text="Salir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Mantenimiento">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Modificar Clientes" />
-                  <MenuItem mnemonicParsing="false" text="Modificar Repuestos" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Ventas">
             <items>
-              <MenuItem mnemonicParsing="false" text="Generar Orden de Compra" />
+              <MenuItem fx:id="opOrdenDeCompra" mnemonicParsing="false" onAction="#OrdenesDeCompra" text="Generar Orden de Compra" />
                   <MenuItem mnemonicParsing="false" text="Reporte de Ordenes" />
             </items>
           </Menu>

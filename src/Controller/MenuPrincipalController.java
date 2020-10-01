@@ -44,4 +44,15 @@ public class MenuPrincipalController extends DataSistema {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void OrdenesDeCompra() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/OrdenDeCompra.fxml"));
+        Pane root = (Pane) fxmlLoader.load();
+        //Estructura FX
+        Scene scene = new Scene(root, 585, 575);
+        Stage stage = new Stage();
+        stage.setTitle("Orden de Compra");
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
 }
