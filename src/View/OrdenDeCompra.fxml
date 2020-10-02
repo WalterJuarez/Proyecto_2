@@ -3,10 +3,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrdenDeCompraController">
+<AnchorPane prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrdenDeCompraController">
    <children>
-      <Label layoutX="35.0" layoutY="351.0" text="Orden de Compra" />
-      <TextField fx:id="txtOC" editable="false" layoutX="151.0" layoutY="347.0" />
+      <Label layoutX="319.0" layoutY="49.0" text="Orden de Compra" />
+      <TextField fx:id="txtOC" editable="false" layoutX="422.0" layoutY="45.0" prefHeight="25.0" prefWidth="135.0" />
+      <DatePicker fx:id="dpFecha" layoutX="124.0" layoutY="45.0" />
+      <Label layoutX="55.0" layoutY="49.0" text="Fecha" />
+      <Label fx:id="txtNitOrden" layoutX="55.0" layoutY="87.0" text="Nit" />
+      <TextField layoutX="124.0" layoutY="83.0" />
+      <TableView fx:id="tblOrdenCompra" layoutX="55.0" layoutY="132.0" prefHeight="200.0" prefWidth="503.0">
+        <columns>
+          <TableColumn prefWidth="47.0" text="Cant" />
+          <TableColumn prefWidth="181.0" text="Nombre Producto" />
+            <TableColumn prefWidth="85.0" text="P Unit" />
+            <TableColumn prefWidth="74.0" text="Descuento" />
+            <TableColumn prefWidth="114.0" text="Total" />
+        </columns>
+      </TableView>
+      <Label layoutX="353.0" layoutY="341.0" text="Envio" />
+      <TextField fx:id="txtEnvio" layoutX="409.0" layoutY="337.0" />
+      <ComboBox fx:id="cbTipoEnvio" editable="true" layoutX="136.0" layoutY="337.0" onMouseClicked="#DatosEnvio" prefWidth="150.0" promptText="Seleccionar..." />
    </children>
 </AnchorPane>

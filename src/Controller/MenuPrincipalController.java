@@ -8,8 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -24,6 +24,7 @@ public class MenuPrincipalController extends DataSistema {
 
 
     public void IngresoCliente() throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/IngresoCliente.fxml"));
         Pane root = (Pane) fxmlLoader.load();
         //Estructura FX
@@ -46,13 +47,16 @@ public class MenuPrincipalController extends DataSistema {
     }
 
     public void OrdenesDeCompra() throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/OrdenDeCompra.fxml"));
         Pane root = (Pane) fxmlLoader.load();
         //Estructura FX
-        Scene scene = new Scene(root, 585, 575);
+        Scene scene = new Scene(root, 625, 575);
         Stage stage = new Stage();
         stage.setTitle("Orden de Compra");
         stage.setScene(scene);
         stage.showAndWait();
     }
+
+
 }
