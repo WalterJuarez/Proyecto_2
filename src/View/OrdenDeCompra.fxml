@@ -3,15 +3,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrdenDeCompraController">
+<AnchorPane prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrdenDeCompraController">
    <children>
-      <Label layoutX="319.0" layoutY="49.0" text="Orden de Compra" />
+      <Label layoutX="370.0" layoutY="49.0" text="No. OC" />
       <TextField fx:id="txtOC" editable="false" layoutX="422.0" layoutY="45.0" prefHeight="25.0" prefWidth="135.0" />
       <DatePicker fx:id="dpFecha" layoutX="124.0" layoutY="45.0" />
       <Label layoutX="55.0" layoutY="49.0" text="Fecha" />
       <Label fx:id="txtNitOrden" layoutX="55.0" layoutY="87.0" text="Nit" />
-      <TextField layoutX="124.0" layoutY="83.0" />
-      <TableView fx:id="tblOrdenCompra" layoutX="55.0" layoutY="132.0" prefHeight="200.0" prefWidth="503.0">
+      <TextField fx:id="txtNit" layoutX="124.0" layoutY="83.0" />
+      <TableView fx:id="tblOrdenCompra" layoutX="55.0" layoutY="209.0" prefHeight="200.0" prefWidth="503.0">
         <columns>
           <TableColumn prefWidth="47.0" text="Cant" />
           <TableColumn prefWidth="181.0" text="Nombre Producto" />
@@ -20,8 +20,13 @@
             <TableColumn prefWidth="114.0" text="Total" />
         </columns>
       </TableView>
-      <Label layoutX="353.0" layoutY="341.0" text="Envio" />
-      <TextField fx:id="txtEnvio" layoutX="409.0" layoutY="337.0" />
-      <ComboBox fx:id="cbTipoEnvio" editable="true" layoutX="136.0" layoutY="337.0" onMouseClicked="#DatosEnvio" prefWidth="150.0" promptText="Seleccionar..." />
+      <Label layoutX="356.0" layoutY="423.0" text="Envio" />
+      <TextField fx:id="txtEnvio" layoutX="408.0" layoutY="418.0" prefHeight="26.0" prefWidth="103.0" />
+      <ComboBox fx:id="cbTipoEnvio" editable="true" layoutX="136.0" layoutY="419.0" onMouseClicked="#DatosEnvio" prefWidth="150.0" promptText="Seleccionar..." />
+      <Button fx:id="btCrear" layoutX="422.0" layoutY="92.0" mnemonicParsing="false" onAction="#Crear" prefHeight="26.0" prefWidth="103.0" text="CREAR" />
+      <Label layoutX="55.0" layoutY="118.0" text="Cantidad" />
+      <TextField fx:id="txtCant" layoutX="124.0" layoutY="114.0" />
+      <TextField layoutX="124.0" layoutY="146.0" />
+      <Label fx:id="txtIdProducto" layoutX="55.0" layoutY="150.0" text="Codigo Pr" />
    </children>
 </AnchorPane>
