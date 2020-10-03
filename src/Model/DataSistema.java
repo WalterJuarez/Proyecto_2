@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class DataSistema{
 
-    public ArrayList<Individual> listadoClientes = new ArrayList<>();
-    public ArrayList<Producto> listaProducto = new ArrayList<>();
+    public static ArrayList<Individual> listadoClientes = new ArrayList<>();
+    public static ArrayList<Producto> listaProducto = new ArrayList<>();
 
     public TableView<Individual> Datos(){
 

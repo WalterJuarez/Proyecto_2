@@ -13,20 +13,22 @@
       <TextField fx:id="txtNit" layoutX="124.0" layoutY="83.0" />
       <TableView fx:id="tblOrdenCompra" layoutX="55.0" layoutY="209.0" prefHeight="200.0" prefWidth="503.0">
         <columns>
-          <TableColumn prefWidth="47.0" text="Cant" />
-          <TableColumn prefWidth="181.0" text="Nombre Producto" />
-            <TableColumn prefWidth="85.0" text="P Unit" />
-            <TableColumn prefWidth="74.0" text="Descuento" />
-            <TableColumn prefWidth="114.0" text="Total" />
+          <TableColumn fx:id="colCant" prefWidth="47.0" text="Cant" />
+          <TableColumn fx:id="colNombrePr" prefWidth="181.0" text="Nombre Producto" />
+            <TableColumn fx:id="colPreUnit" prefWidth="85.0" text="P Unit" />
+            <TableColumn fx:id="colDescuento" prefWidth="74.0" text="Descuento" />
+            <TableColumn fx:id="colTotal" prefWidth="114.0" text="Total" />
         </columns>
       </TableView>
       <Label layoutX="356.0" layoutY="423.0" text="Envio" />
       <TextField fx:id="txtEnvio" layoutX="408.0" layoutY="418.0" prefHeight="26.0" prefWidth="103.0" />
       <ComboBox fx:id="cbTipoEnvio" editable="true" layoutX="136.0" layoutY="419.0" onMouseClicked="#DatosEnvio" prefWidth="150.0" promptText="Seleccionar..." />
-      <Button fx:id="btCrear" layoutX="422.0" layoutY="92.0" mnemonicParsing="false" onAction="#Crear" prefHeight="26.0" prefWidth="103.0" text="CREAR" />
+      <Button fx:id="btCrear" layoutX="422.0" layoutY="91.0" mnemonicParsing="false" onAction="#Crear" prefHeight="26.0" prefWidth="103.0" text="CREAR" />
       <Label layoutX="55.0" layoutY="118.0" text="Cantidad" />
       <TextField fx:id="txtCant" layoutX="124.0" layoutY="114.0" />
       <TextField layoutX="124.0" layoutY="146.0" />
       <Label fx:id="txtIdProducto" layoutX="55.0" layoutY="150.0" text="Codigo Pr" />
+      <Button fx:id="btAgregarLinea" layoutX="422.0" layoutY="134.0" mnemonicParsing="false" onAction="#AgregarItem" text="AGREGAR LINEA" />
+      
    </children>
 </AnchorPane>
