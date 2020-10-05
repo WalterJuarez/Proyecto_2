@@ -1,23 +1,17 @@
 package Controller;
-
 import Model.DataSistema;
-import Model.Individual;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.sun.javafx.scene.EnteredExitedHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class MenuPrincipalController extends DataSistema {
+
+public class MenuPrincipalController {
     public MenuItem opIngresoCliente;
 
     @FXML
@@ -43,7 +37,7 @@ public class MenuPrincipalController extends DataSistema {
         Stage stage = new Stage();
         stage.setTitle("Listado de Repuestos");
         stage.setScene(scene);
-        stage.show();
+        stage.showAndWait();
     }
 
     public void OrdenesDeCompra() throws IOException {
@@ -57,6 +51,5 @@ public class MenuPrincipalController extends DataSistema {
         stage.setScene(scene);
         stage.showAndWait();
     }
-
 
 }

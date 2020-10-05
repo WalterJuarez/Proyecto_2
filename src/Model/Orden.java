@@ -2,7 +2,7 @@ package Model;
 
 import java.util.Date;
 
-public class Orden {
+public class Orden extends ItemOrden{
     private static int siglOrden = 1;
     private int id;
     private Clientes cliente;
@@ -10,23 +10,25 @@ public class Orden {
     private ItemOrden item1;
     private ItemOrden item2;
     private Double precioEnvio;
-    private Double Total;
+    private Double total;
     private String tipoEnvio;
     private String estado;
     private int diasEnvio;
 
     public Orden() {
+        super();
+
     }
 
     public Orden(Clientes cliente,Date fechaOrden, ItemOrden item1, ItemOrden item2,  Double precioEnvio, Double total, String tipoEnvio, String estado, int diasEnvio) {
+        this.getNoLnea();
         this.id = siglOrden++;
         this.cliente = cliente;
         this.fechaOrden = fechaOrden;
         this.item1 = item1;
         this.item2 = item2;
-
         this.precioEnvio = precioEnvio;
-        Total = total;
+        this.total = montoTotal();
         this.tipoEnvio = tipoEnvio;
         this.estado = estado;
         this.diasEnvio = diasEnvio;
@@ -81,11 +83,11 @@ public class Orden {
     }
 
     public Double getTotal() {
-        return Total;
+        return total;
     }
 
     public void setTotal(Double total) {
-        Total = total;
+        total = total;
     }
 
     public String getTipoEnvio() {
@@ -110,5 +112,10 @@ public class Orden {
 
     public void setDiasEnvio(int diasEnvio) {
         this.diasEnvio = diasEnvio;
+    }
+
+    public Double montoTotal(){
+        Double monto = cantidad * producto.getPrecio();
+        return monto;
     }
 }

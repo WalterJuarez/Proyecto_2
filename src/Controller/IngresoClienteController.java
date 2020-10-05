@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.DataSistema;
+import Model.Empresa;
 import Model.Individual;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,20 +11,23 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class IngresoClienteController extends DataSistema{
+import java.util.ArrayList;
 
+public class IngresoClienteController extends DataSistema{
+    @FXML
     public TextField txtNitUsuario;
     public TextField txtNombreUsuario;
     public TextField txtDireccionUsuario;
-    @FXML
+    public TextField txtDpi;
     public TableView<Individual> tblClientes = Datos();
     public TableColumn<Individual, Integer> colId;
     public TableColumn<Individual, String> colNit;
     public TableColumn<Individual, String> colNombre;
-    public TextField txtDpi;
     public TableColumn<Individual, String> colDire;
-    public ComboBox cbTipoCliente;
     public TableColumn colTipoCliente;
+
+    public ComboBox cbTipoCliente;
+
 
     @Override
     public TableView<Individual> Datos() {
@@ -32,23 +36,30 @@ public class IngresoClienteController extends DataSistema{
     }
 
     ;
-
-    //ArrayList<Individual> listadoClientes = new ArrayList<>();
-
+    @FXML
 
     public void IngresoClientes(ActionEvent actionEvent) {
-
-        /*if(chbTipoUsuario.getOnAction().equals(true)){
-            tipoUsuario = "Empresa";
-        }*/
+        String tipoUsusario;
+        String dpiContacto = txtDpi.getText();
+        String nit = txtNitUsuario.getText();
+        String nombre = txtNombreUsuario.getText();
+        String direccion = txtDireccionUsuario.getText();
         if (!txtNitUsuario.getText().equals("") || !txtNombreUsuario.getText().equals("") || !txtDireccionUsuario.getText().equals("")|| !(cbTipoCliente.getValue() ==null)) {
-            String tipoUsuario = "ub";
-            listadoClientes.add(new Individual(txtDpi.getText(),txtNombreUsuario.getText(), txtNitUsuario.getText(), txtDireccionUsuario.getText(), tipoUsuario));
-            //JOptionPane.showMessageDialog(null, "Ingreso Exitoso");
-            txtNitUsuario.setText( "" );
-            txtNombreUsuario.setText( "" );
-            txtDpi.setText( "" );
-            txtDireccionUsuario.setText( "" );
+            if (cbTipoCliente.getValue().equals("Particular")){
+                tipoUsusario = "Particular";
+            }else{
+                tipoUsusario = "Empresa";
+            }
+
+                listadoClientes.add(new Individual(dpiContacto, nombre,nit, direccion, tipoUsusario));
+
+                //JOptionPane.showMessageDialog(null, "Ingreso Exitoso");
+                txtNitUsuario.setText("");
+                txtNombreUsuario.setText("");
+                txtDpi.setText("");
+                txtDireccionUsuario.setText("");
+                cbTipoCliente.setValue(null);
+
         }
     }
 
@@ -64,10 +75,12 @@ public class IngresoClienteController extends DataSistema{
         tblClientes.setItems( cliente );
     }
 
+
     public void TipoCliente(MouseEvent mouseEvent) {
         ObservableList<String> listadoTiposCliente = FXCollections.observableArrayList("Particular","Empresa");
         cbTipoCliente.setItems( listadoTiposCliente );
 
-
     }
+
+
 }

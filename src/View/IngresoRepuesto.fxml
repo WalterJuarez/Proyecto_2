@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoRepuestosController">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoRepuestosController">
    <children>
       <Label layoutX="43.0" layoutY="31.0" text="Nombre" />
       <Label layoutX="43.0" layoutY="64.0" text="Precio" />
@@ -19,6 +19,7 @@
             <TableColumn fx:id="colExistencia" prefWidth="184.0" text="EXISTENCIA" />
         </columns>
       </TableView>
-      <Button fx:id="btAgregarRepuesto" layoutX="399.0" layoutY="27.0" mnemonicParsing="false" onAction="#IngresoProductos" text="AGREGAR Y ACTUALIZAR" />
+      <Button fx:id="btAgregarRepuesto" layoutX="399.0" layoutY="27.0" mnemonicParsing="false" onAction="#IngresoProductos" prefHeight="25.0" prefWidth="149.0" text="AGREGAR" />
+      <Button fx:id="btActualizar" layoutX="398.0" layoutY="60.0" mnemonicParsing="false" onAction="#Actualizar" prefHeight="25.0" prefWidth="149.0" text="ACTUALIZAR" />
    </children>
 </Pane>

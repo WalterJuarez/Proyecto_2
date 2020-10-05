@@ -5,7 +5,7 @@ public class ItemOrden {
     int cantidad;
     Producto producto;
 
-    public ItemOrden(int cantidad, Producto producto) {
+    public ItemOrden() {
         this.noLnea = noLnea++;
         this.cantidad = cantidad;
         this.producto = producto;
