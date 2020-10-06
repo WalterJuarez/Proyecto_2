@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuPrincipalController">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuPrincipalController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
         <menus>
@@ -11,7 +11,7 @@
             <items>
               <MenuItem fx:id="opIngresoCliente" mnemonicParsing="false" onAction="#IngresoCliente" text="Ingresar Cliente" />
                   <MenuItem mnemonicParsing="false" onAction="#IngresoRespuesto" text="Ingresar Repuesto" />
-                  <MenuItem fx:id="opSalir" mnemonicParsing="false" text="Salir" />
+                  <MenuItem fx:id="opSalir" mnemonicParsing="false" onAction="#Cerrar" text="Salir" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ventas">

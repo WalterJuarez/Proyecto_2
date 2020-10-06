@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.ItemOrden;
 import Model.Orden;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,19 +49,16 @@ public class OrdenDeCompraController {
 
     }
 
+
     public void AgregarItem(ActionEvent actionEvent) {
-        LocalDate fecha = dpFecha.getValue();
         String nit = txtNit.getText();
-        int cant = Integer.parseInt(txtCant.getText());
-        int id = Integer.parseInt(txtCodPro.getText());
-        if(listadoClientes.contains(nit)) {
-            if(listaProducto.contains(id)) {
-                listaOrdenes.add(new Orden());
-                ObservableList<Orden> listadoLineasPedido = FXCollections.observableArrayList(listaOrdenes);
-                colCant.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
-                colNombrePr.setCellValueFactory(new PropertyValueFactory<>("id"));
-                tblOrdenCompra.setItems(listadoLineasPedido);
+        for (int i = 0; i < listadoClientes.size(); i++)
+            if (nit == listadoClientes.get( i ).getNit()) {
+                System.out.println( nit );
             }
-        }
+
     }
+
 }
+
+

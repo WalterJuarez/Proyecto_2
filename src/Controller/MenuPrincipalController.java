@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class MenuPrincipalController {
     public MenuItem opIngresoCliente;
+    public MenuItem opSalir;
 
     @FXML
 
@@ -52,4 +53,7 @@ public class MenuPrincipalController {
         stage.showAndWait();
     }
 
+    public void Cerrar(ActionEvent actionEvent) {
+        System.exit( 0 );
+    }
 }

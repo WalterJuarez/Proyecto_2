@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrdenDeCompraController">
+<AnchorPane prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrdenDeCompraController">
    <children>
       <Label layoutX="370.0" layoutY="49.0" text="No. OC" />
       <TextField fx:id="txtOC" editable="false" layoutX="422.0" layoutY="45.0" prefHeight="25.0" prefWidth="135.0" />

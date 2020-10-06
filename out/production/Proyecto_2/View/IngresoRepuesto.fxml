@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoRepuestosController">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoRepuestosController">
    <children>
       <Label layoutX="43.0" layoutY="31.0" text="Nombre" />
       <Label layoutX="43.0" layoutY="64.0" text="Precio" />
@@ -11,15 +11,15 @@
       <TextField fx:id="txtNombreRepuesto" layoutX="127.0" layoutY="27.0" />
       <TextField fx:id="txtPrecio" layoutX="127.0" layoutY="60.0" />
       <TextField fx:id="txtCantidad" layoutX="127.0" layoutY="95.0" />
-      <TableView fx:id="tblRepuestos" layoutX="41.0" layoutY="149.0" prefHeight="200.0" prefWidth="508.0">
+      <TableView fx:id="tblRepuestos" layoutX="41.0" layoutY="149.0" onMouseClicked="#Seleccionar" prefHeight="200.0" prefWidth="508.0">
         <columns>
-          <TableColumn fx:id="colIdRepuestos" prefWidth="30.0" text="ID" />
-          <TableColumn fx:id="colNombre" prefWidth="120.0" text="NOMBRE" />
-            <TableColumn fx:id="colPrecio" prefWidth="96.0" text="PRECIO UNI" />
-            <TableColumn fx:id="colExistencia" prefWidth="184.0" text="EXISTENCIA" />
+          <TableColumn fx:id="colIdRepuestos" prefWidth="71.0" text="ID" />
+          <TableColumn fx:id="colNombre" prefWidth="143.0" text="NOMBRE" />
+            <TableColumn fx:id="colPrecio" prefWidth="88.0" text="PRECIO UNI" />
+            <TableColumn fx:id="colExistencia" prefWidth="90.0" text="EXISTENCIA" />
         </columns>
       </TableView>
       <Button fx:id="btAgregarRepuesto" layoutX="399.0" layoutY="27.0" mnemonicParsing="false" onAction="#IngresoProductos" prefHeight="25.0" prefWidth="149.0" text="AGREGAR" />
-      <Button fx:id="btActualizar" layoutX="398.0" layoutY="60.0" mnemonicParsing="false" onAction="#Actualizar" prefHeight="25.0" prefWidth="149.0" text="ACTUALIZAR" />
+      <Button fx:id="btModificar" layoutX="399.0" layoutY="60.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="149.0" text="MODIFICAR" />
    </children>
 </Pane>

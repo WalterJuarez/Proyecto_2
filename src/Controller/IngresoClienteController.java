@@ -3,6 +3,7 @@ package Controller;
 import Model.DataSistema;
 import Model.Empresa;
 import Model.Individual;
+import Model.Producto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,7 +29,15 @@ public class IngresoClienteController extends DataSistema{
 
     public ComboBox cbTipoCliente;
 
-
+    public void initialize (){
+        ObservableList<Individual> cliente = FXCollections.observableArrayList( listadoClientes );
+        colId.setCellValueFactory( new PropertyValueFactory<Individual, Integer>( "id" ) );
+        colNit.setCellValueFactory( new PropertyValueFactory<Individual, String>( "nit" ) );
+        colNombre.setCellValueFactory( new PropertyValueFactory<Individual, String>( "nombre" ) );
+        colDire.setCellValueFactory( new PropertyValueFactory<Individual, String>( "direccion" ) );
+        colTipoCliente.setCellValueFactory( new PropertyValueFactory<Individual, String>( "tipoUsuario" ) );
+        tblClientes.setItems( cliente );
+    }
     @Override
     public TableView<Individual> Datos() {
         super.Datos();
@@ -54,6 +63,13 @@ public class IngresoClienteController extends DataSistema{
                 listadoClientes.add(new Individual(dpiContacto, nombre,nit, direccion, tipoUsusario));
 
                 //JOptionPane.showMessageDialog(null, "Ingreso Exitoso");
+            ObservableList<Individual> cliente = FXCollections.observableArrayList( listadoClientes );
+            colId.setCellValueFactory( new PropertyValueFactory<Individual, Integer>( "id" ) );
+            colNit.setCellValueFactory( new PropertyValueFactory<Individual, String>( "nit" ) );
+            colNombre.setCellValueFactory( new PropertyValueFactory<Individual, String>( "nombre" ) );
+            colDire.setCellValueFactory( new PropertyValueFactory<Individual, String>( "direccion" ) );
+            colTipoCliente.setCellValueFactory( new PropertyValueFactory<Individual, String>( "tipoUsuario" ) );
+            tblClientes.setItems( cliente );
                 txtNitUsuario.setText("");
                 txtNombreUsuario.setText("");
                 txtDpi.setText("");
@@ -64,18 +80,6 @@ public class IngresoClienteController extends DataSistema{
     }
 
 
-    public void Actualizar(ActionEvent actionEvent) {
-
-        ObservableList<Individual> cliente = FXCollections.observableArrayList( listadoClientes );
-        colId.setCellValueFactory( new PropertyValueFactory<Individual, Integer>( "id" ) );
-        colNit.setCellValueFactory( new PropertyValueFactory<Individual, String>( "nit" ) );
-        colNombre.setCellValueFactory( new PropertyValueFactory<Individual, String>( "nombre" ) );
-        colDire.setCellValueFactory( new PropertyValueFactory<Individual, String>( "direccion" ) );
-        colTipoCliente.setCellValueFactory( new PropertyValueFactory<Individual, String>( "tipoUsuario" ) );
-        tblClientes.setItems( cliente );
-    }
-
-
     public void TipoCliente(MouseEvent mouseEvent) {
         ObservableList<String> listadoTiposCliente = FXCollections.observableArrayList("Particular","Empresa");
         cbTipoCliente.setItems( listadoTiposCliente );
@@ -83,4 +87,27 @@ public class IngresoClienteController extends DataSistema{
     }
 
 
+    public void Seleccionar(MouseEvent mouseEvent) {
+        Individual p = this.tblClientes.getSelectionModel().getSelectedItem();
+        if (p != null) {
+            this.txtDpi.setText( String.valueOf( p.getId() ) );
+            this.txtNitUsuario.setText( String.valueOf( p.getNit() ) );
+            this.txtNombreUsuario.setText( String.valueOf( p.getNombre() ) );
+            this.txtDireccionUsuario.setText( String.valueOf( p.getDireccion() ) );
+            this.cbTipoCliente.setValue( p.getTipoUsuario() );
+        }
+
+    }
+
+    public void Modificar(ActionEvent actionEvent) {
+        Individual p = this.tblClientes.getSelectionModel().getSelectedItem();
+        if (p == null) {
+            Alert alert = new Alert( Alert.AlertType.ERROR );
+            alert.setHeaderText( null );
+            alert.setTitle( "Error" );
+            alert.setContentText( "Debes seleccionar una fila para poder modificar" );
+            alert.showAndWait();
+
+        }
+    }
 }

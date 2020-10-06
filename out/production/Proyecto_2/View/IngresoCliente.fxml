@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="panelClientes" prefHeight="565.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoClienteController">
+<Pane fx:id="panelClientes" prefHeight="565.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IngresoClienteController">
    <children>
       <Button fx:id="btCrear" layoutX="364.0" layoutY="32.0" mnemonicParsing="false" onAction="#IngresoClientes" prefHeight="26.0" prefWidth="149.0" text="CREAR " />
       <Label layoutX="68.0" layoutY="77.0" text="Nit" />
@@ -12,21 +12,21 @@
       <TextField fx:id="txtNombreUsuario" layoutX="169.0" layoutY="103.0" />
       <Label layoutX="65.0" layoutY="143.0" text="Direccion" />
       <TextField fx:id="txtDireccionUsuario" layoutX="169.0" layoutY="139.0" />
-      <TableView fx:id="tblClientes" layoutX="54.0" layoutY="219.0" prefHeight="232.0" prefWidth="456.0">
+      <TableView fx:id="tblClientes" layoutX="54.0" layoutY="219.0" onMouseClicked="#Seleccionar" prefHeight="232.0" prefWidth="456.0">
         <columns>
-          <TableColumn fx:id="colId" onEditStart="#Actualizar" prefWidth="39.0" text="ID" />
-          <TableColumn fx:id="colNit" onEditStart="#Actualizar" prefWidth="76.0" text="NIT" />
-            <TableColumn fx:id="colNombre" onEditStart="#Actualizar" prefWidth="110.0" text="NOMBRE" />
-            <TableColumn fx:id="colDire" onEditStart="#Actualizar" prefWidth="98.0" text="DIRECCION" />
-            <TableColumn fx:id="colTipoCliente" onEditStart="#Actualizar" prefWidth="94.0" text="TIPO CLIENTE" />
+          <TableColumn fx:id="colId" prefWidth="39.0" text="ID" />
+          <TableColumn fx:id="colNit" prefWidth="76.0" text="NIT" />
+            <TableColumn fx:id="colNombre" prefWidth="110.0" text="NOMBRE" />
+            <TableColumn fx:id="colDire" prefWidth="98.0" text="DIRECCION" />
+            <TableColumn fx:id="colTipoCliente" prefWidth="94.0" text="TIPO CLIENTE" />
         </columns>
       </TableView>
       <Label layoutX="62.0" layoutY="36.0" text="Dpi" />
       <TextField fx:id="txtDpi" layoutX="169.0" layoutY="32.0" />
       <Label layoutX="62.0" layoutY="457.0" text="* RECUERDE LLENAR TODOS LOS CAMPOS, DE LO CONTRARIO " textFill="#f20a0a" />
       <Label layoutX="74.0" layoutY="480.0" text="NO SERAN AGREGADOS A LA LISTA" textFill="#ee0404" />
-      <Button fx:id="btActualizar" layoutX="365.0" layoutY="65.0" mnemonicParsing="false" onAction="#Actualizar" onInputMethodTextChanged="#Actualizar" prefHeight="25.0" prefWidth="149.0" text="ACTUALIZAR" />
       <ComboBox fx:id="cbTipoCliente" layoutX="168.0" layoutY="173.0" onMouseClicked="#TipoCliente" prefWidth="150.0" promptText="Seleccionar..." />
       <Label layoutX="65.0" layoutY="177.0" text="Tipo Cliente" />
+      <Button fx:id="btModificar" layoutX="364.0" layoutY="65.0" mnemonicParsing="false" onAction="#Modificar" prefHeight="25.0" prefWidth="149.0" text="MODIFICAR" />
    </children>
 </Pane>

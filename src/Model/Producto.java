@@ -19,6 +19,13 @@ public class Producto {
         this.existencia = existencia;
 
     }
+    public Producto(int id, String nombreProducto, double precio, int existencia) {
+        this.id = id;
+        this.nombreProducto = nombreProducto;
+        this.precio = precio;
+        this.existencia = existencia;
+
+    }
 
     public int getId() {
         return id;
@@ -44,7 +51,7 @@ public class Producto {
         this.nombreProducto = nombreProducto;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
